@@ -12,6 +12,7 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 
 import OrderHistory from './OrderHistory'
+import Schedule from './Schedule'
 
 class ClassesScreen extends Component {
 
@@ -62,12 +63,10 @@ class ClassesScreen extends Component {
 						/>
 						<View>
 							{(this.state.selectedIndex === 0) ? (
-								<Text style={styles.text}>
-									Current index is 0
-                                   </Text>
+								<Schedule />
 							) : (
-									<OrderHistory />
-								)}
+								<OrderHistory />
+							)}
 						</View>
 					</SafeAreaView>
 				</ScrollView>
@@ -85,8 +84,8 @@ const styles = StyleSheet.create({
 	},
 	segmentedIOS: {
 		marginTop: 15,
-		marginLeft: 30,
-		marginRight: 30
+		marginLeft: 70,
+		marginRight: 70,
 	},
 	avatar: {
 		width: 80,
