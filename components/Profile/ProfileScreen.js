@@ -11,6 +11,8 @@ import {
 
 import { Ionicons } from '@expo/vector-icons';
 
+import OrderHistory from './OrderHistory'
+
 class ClassesScreen extends Component {
 
      static navigationOptions = ({ navigation }) => {
@@ -30,7 +32,7 @@ class ClassesScreen extends Component {
      }
 
      state = {
-          selectedIndex: 1
+          selectedIndex: 0
      }
 
      render() {
@@ -57,6 +59,15 @@ class ClassesScreen extends Component {
                                         this.setState({selectedIndex: event.nativeEvent.selectedSegmentIndex});
                                    }}
                               />
+                              <View>
+                              {(this.state.selectedIndex === 0) ? (
+                                   <Text style={styles.text}>
+                                        Current index is 0
+                                   </Text>
+                                   ) : (
+                                   <OrderHistory />
+                              )}
+                              </View>
                          </SafeAreaView>
                     </ScrollView>
                </View>
@@ -114,5 +125,9 @@ const styles = StyleSheet.create({
           flexDirection: 'row',
           flexWrap: 'wrap',
           justifyContent: 'space-evenly',
+     },
+     text: {
+          fontFamily: 'Avenir Next',
+          fontSize: 20,
      }
 });
