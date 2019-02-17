@@ -5,13 +5,20 @@ import {
 	StyleSheet
 } from 'react-native';
 
+import { Calendar } from 'react-native-calendars'
+
 class Schedule extends Component {
 	render() {
-		return(
+		return (
 			<View style={styles.container}>
-				<Text style={styles.text}>
-					Schedule.js
-				</Text>
+				<Calendar
+					markedDates={{
+						'2019-05-16': { selected: true, marked: true, selectedColor: 'blue' },
+						'2019-05-17': { marked: true },
+						'2018-05-18': { marked: true, dotColor: 'red', activeOpacity: 0 },
+						'2019-05-19': { disabled: true, disableTouchEvent: true }
+					}}
+				/>
 			</View>
 		)
 	}
@@ -21,9 +28,8 @@ export default Schedule;
 
 const styles = StyleSheet.create({
 	container: {
-		alignItems: 'center',
-		justifyContent: 'center',
-		flex: 1
+		flex: 1,
+		marginTop: 10
 	},
 	text: {
 		fontSize: 20,

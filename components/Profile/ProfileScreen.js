@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
 		backgroundColor: 'rgb(255, 255, 255)'
 	},
 	segmentedIOS: {
-		marginTop: 15,
+		marginTop: 10,
 		marginLeft: 70,
 		marginRight: 70,
 	},
