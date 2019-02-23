@@ -18,6 +18,9 @@ import FeedScreen from './components/Feed/FeedScreen';
 import ProfileScreen from './components/Profile/ProfileScreen';
 import ProfileSettings from './components/Profile/ProfileSettings'
 
+import SignInScreen from './components/Auth/SignInScreen'
+import AuthLoadingScreen from './components/Auth/AuthLoadingScreen'
+
 
 // const FeedStack;
 
@@ -64,7 +67,17 @@ const AppStack = createBottomTabNavigator({
   swipeEnabled: true
 })
 
-const App = createAppContainer(AppStack)
+const AuthStack = createStackNavigator({ SignIn: SignInScreen });
 
-export default App;
+export default createAppContainer(createSwitchNavigator(
+	{
+	  AuthLoading: AuthLoadingScreen,
+	  App: AppStack,
+	  Auth: AuthStack,
+	},
+	{
+	  initialRouteName: 'AuthLoading',
+	}
+  ));
+  
 

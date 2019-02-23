@@ -1,63 +1,55 @@
 import React, { Component } from 'react';
-import { Platform, Text, View, StyleSheet } from 'react-native';
-import { Constants, Location, Permissions } from 'expo';
+import {
+	View,
+	StyleSheet,
+	SegmentedControlIOS,
+	Text,
+	SafeAreaView
+} from 'react-native';
 
-export default class App extends Component {
-  state = {
-    location: null,
-    errorMessage: null,
-  };
+import MapScreen from './MapScreen';
+import ShopScreen from './ShopScreen';
 
-  componentWillMount() {
-    if (Platform.OS === 'android' && !Constants.isDevice) {
-      this.setState({
-        errorMessage: 'Oops, this will not work on Sketch in an Android emulator. Try it on your device!',
-      });
-    } else {
-      this._getLocationAsync();
-    }
-  }
+class ExploreScreen extends Component {
+	state = {
+		selectedIndex: 0
+	}
 
-  _getLocationAsync = async () => {
-    let { status } = await Permissions.askAsync(Permissions.LOCATION);
-    if (status !== 'granted') {
-      this.setState({
-        errorMessage: 'Permission to access location was denied',
-      });
-    }
-
-    let location = await Location.getCurrentPositionAsync({});
-    this.setState({ location });
-  };
-
-  render() {
-    let text = 'Waiting..';
-    if (this.state.errorMessage) {
-      text = this.state.errorMessage;
-    } else if (this.state.location) {
-	  text = JSON.stringify(this.state.location);
-	  console.log(this.state.location)
-    }
-
-    return (
-      <View style={styles.container}>
-        <Text style={styles.paragraph}>{text}</Text>
-      </View>
-    );
-  }
+	render() {
+		return (
+			<SafeAreaView style={styles.container}>
+				<SegmentedControlIOS
+					style={styles.segmentedIOS}
+					values={['Map View', 'List View']}
+					selectedIndex={this.state.selectedIndex}
+					onChange={(event) => {
+						this.setState({ selectedIndex: event.nativeEvent.selectedSegmentIndex });
+					}}
+				/>
+				{(this.state.selectedIndex === 0) ? (
+					<MapScreen />
+				) : (
+					<ShopScreen />
+				)}
+			</SafeAreaView>
+		)
+	}
 }
 
+export default ExploreScreen;
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#ecf0f1',
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    textAlign: 'center',
-  },
-});
+	container: {
+		flex: 1
+	},
+	text: {
+		fontFamily: "Avenir Next",
+		fontSize: 20
+	},
+	segmentedIOS: {
+		marginTop: 0,
+		marginLeft: 70,
+		marginRight: 70,
+		marginBottom: 10
+	},
+})

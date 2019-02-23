@@ -1,33 +1,44 @@
 import React, { Component } from 'react';
 import {
-     View,
-     Text,
-     Image,
-     StyleSheet
+	View,
+	Text,
+	TouchableOpacity,
+	StyleSheet,
+	AsyncStorage
 } from 'react-native';
 
 class ProfileSettings extends Component {
-     render() {
-          return(
-               <View style={styles.container}>
-                    <Text style={styles.text}>
-                         ProfileSettings.js
-                    </Text>
-               </View>
-          )
-     }
+	_signOutAsync = async () => {
+		await AsyncStorage.clear();
+		this.props.navigation.navigate('Auth');
+	};
+
+	render() {
+		return (
+			<View style={styles.container}>
+				<TouchableOpacity
+					style={{ paddingRight: 10 }}
+					onPress={this._signOutAsync}
+				>
+					<Text style={styles.text}>
+						GoodGame.js
+					</Text>
+				</TouchableOpacity>
+			</View>
+		)
+	}
 }
 
 export default ProfileSettings;
 
 const styles = StyleSheet.create({
-     container: {
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center'
-     },
-     text: {
-          fontFamily: 'Avenir Next',
-          fontSize: 20,
-     }
+	container: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
+	text: {
+		fontFamily: 'Avenir Next',
+		fontSize: 20,
+	}
 })
