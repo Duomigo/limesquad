@@ -3,27 +3,39 @@ import {
 	View,
 	Text,
 	StyleSheet,
-	Image
+	Image,
+	TouchableOpacity
 } from 'react-native';
+
+import { withNavigation } from 'react-navigation' 
 
 class ShopItem extends Component {
 	render() {
-		const { item } = this.props
-		console.log(item)
+		const { item } = this.props;
+
 		return (
-			<View style={styles.container}>
+			<TouchableOpacity 
+				style={styles.container}
+				onPress={() => {
+					this.props.navigation.navigate('Detail', {
+						name: item.name,
+						address: item.address,
+						image: item.image
+					})
+			   }}
+			>
 				<View style={styles.titleBar}>
 					<Image style={styles.itemImage} source={{uri: item.image}} />
 					<Text style={styles.itemTitle}>{item.name}</Text>
 					<Text style={styles.itemPlace}>{item.address}</Text>
 					<Text style={styles.itemPlace}>3 people can shop for you</Text>
 				</View>
-			</View>
+			</TouchableOpacity>
 		)
 	}
 }
 
-export default ShopItem;
+export default withNavigation(ShopItem);
 
 const styles = StyleSheet.create({
 	container: {

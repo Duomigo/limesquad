@@ -23,6 +23,7 @@ import AuthLoadingScreen from './components/Auth/AuthLoadingScreen'
 import SplashScreen from './components/Auth/SplashScreen';
 
 import DetailScreen from './components/Explore/DetailScreen'
+import ShopScreen from './components/Explore/ShopScreen';
 
 
 // const FeedStack;
@@ -33,11 +34,14 @@ const ExploreStack = createStackNavigator({
 	},
 	Detail: {
 		screen: DetailScreen
+	},
+	Shop: {
+		screen: ShopScreen
 	}
 })
 
 const ProfileStack = createStackNavigator({
-	Classes: {
+	Profile: {
 		screen: ProfileScreen
 	},
 	Settings: {

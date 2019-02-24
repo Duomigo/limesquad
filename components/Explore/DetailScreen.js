@@ -6,6 +6,12 @@ import {
 } from 'react-native';
 
 class DetailScreen extends Component {
+	static navigationOptions = ({ navigation }) => {
+		return {
+			 title: navigation.getParam('name', '')
+		}
+   }
+
 	render() {
 		return (
 			<View>
