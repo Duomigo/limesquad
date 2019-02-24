@@ -10,7 +10,7 @@ import {
 class ProfileSettings extends Component {
 	_signOutAsync = async () => {
 		await AsyncStorage.clear();
-		this.props.navigation.navigate('Auth');
+		this.props.navigation.navigate('SignIn');
 	};
 
 	render() {

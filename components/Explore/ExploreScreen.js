@@ -15,6 +15,10 @@ class ExploreScreen extends Component {
 		selectedIndex: 0
 	}
 
+	static navigationOptions = {
+		header: null
+	}
+
 	render() {
 		return (
 			<SafeAreaView style={styles.container}>
