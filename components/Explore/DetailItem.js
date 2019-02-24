@@ -9,7 +9,7 @@ import {
 
 import { withNavigation } from 'react-navigation' 
 
-class ShopItem extends Component {
+class DetailItem extends Component {
 	render() {
 		const { item } = this.props;
 
@@ -36,7 +36,7 @@ class ShopItem extends Component {
 	}
 }
 
-export default withNavigation(ShopItem);
+export default withNavigation(DetailItem);
 
 const styles = StyleSheet.create({
 	container: {
@@ -49,15 +49,15 @@ const styles = StyleSheet.create({
 		fontWeight: '500',
 	},
 	itemTitle: {
-		fontSize: 16,
+		fontSize: 18,
 		fontFamily: 'Avenir Next',
 		color: '#3c4560',
 		fontWeight: '700',
 		marginTop: -3
 	},
 	itemImage: {
-		width: 50,
-		height: 50,
+		width: 100,
+		height: 100,
 		backgroundColor: 'black',
 		borderRadius: 3,
 		marginLeft: 15,
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
 	},
 	titleBar: {
 		width: '100%',
-		paddingLeft: 75,
+		paddingLeft: 125,
 		marginTop: 5
 	},
 })

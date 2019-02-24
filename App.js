@@ -24,6 +24,7 @@ import SplashScreen from './components/Auth/SplashScreen';
 
 import DetailScreen from './components/Explore/DetailScreen'
 import ShopScreen from './components/Explore/ShopScreen';
+import MapScreen from './components/Explore/MapScreen'
 
 
 // const FeedStack;
@@ -37,6 +38,9 @@ const ExploreStack = createStackNavigator({
 	},
 	Shop: {
 		screen: ShopScreen
+	},
+	Map: {
+		screen: MapScreen
 	}
 })
 

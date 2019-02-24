@@ -65,7 +65,7 @@ class ExploreScreen extends Component {
 					height: 1,
 					width: "100%",
 					backgroundColor: "#CED0CE",
-					// marginLeft: "14%"
+					marginLeft: 25,
 				}}
 			/>
 		);
@@ -103,8 +103,9 @@ const styles = StyleSheet.create({
 		fontFamily: 'Avenir Next',
 	},
 	titleHeader: {
-		marginLeft: 20,
+		marginLeft: 25,
 		fontSize: 22,
+		marginBottom: 5,
 		fontFamily: 'Avenir Next',
 		fontWeight: '700',
 		color: '#3c4560'

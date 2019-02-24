@@ -5,6 +5,11 @@ import { Constants, Location, Permissions, MapView } from 'expo';
 const Marker = MapView.Marker
 
 class MapScreen extends Component {
+
+	static navigationOptions = {
+		title: "Map View"
+	}
+
 	constructor(props) {
 		super(props);
 		this.state = {
