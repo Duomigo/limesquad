@@ -34,7 +34,7 @@ class SignInScreen extends Component {
 					Welcome back!
 				</Text>
 				<Image 
-					source={{uri: "http://i.imgur.com/sdO8tAw.png"}}
+					source={require('../../assets/logo.png')}
 					style={styles.logo}
 				/>
 				<Text style={styles.text}>

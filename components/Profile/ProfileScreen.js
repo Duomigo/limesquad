@@ -6,10 +6,12 @@ import {
 	ScrollView,
 	TouchableOpacity,
 	SegmentedControlIOS,
-	SafeAreaView
+	SafeAreaView,
+	AsyncStorage
 } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
+import axios from 'axios';
 
 import OrderHistory from './OrderHistory'
 import Schedule from './Schedule'
@@ -33,7 +35,28 @@ class ClassesScreen extends Component {
 	}
 
 	state = {
-		selectedIndex: 0
+		selectedIndex: 0,
+		name: 'Limesquad',
+		username: 'limesquad',
+		image: 'null'
+	}
+
+	async componentDidMount() {
+		const token = await AsyncStorage.getItem('userToken', token);
+
+		axios.defaults.headers.common = {'Authorization': `bearer ${token}`}
+
+		try {
+			const response = await axios.get("http://localhost:3000/api/users/me");
+			const data = await response.data;
+			
+			this.setState ({
+				name: data.name,
+				username: data.username
+			})
+		} catch(err) {
+			console.log(JSON.stringify(err))
+		}
 	}
 
 	render() {
@@ -43,9 +66,9 @@ class ClassesScreen extends Component {
 					showsVerticalScrollIndicator={false}
 				>
 					<View style={styles.titleBar}>
-						<Image style={styles.avatar} source={require('../../assets/huy.jpg')} />
-						<Text style={styles.name}>Huy Pham</Text>
-						<Text style={styles.title}>@huypham50</Text>
+						<Image style={styles.avatar} source={require('../../assets/demo.jpg')} />
+						<Text style={styles.name}>{this.state.name}</Text>
+						<Text style={styles.title}>@{this.state.username}</Text>
 					</View>
 
 					{/* <Text style={styles.subTitle}>

@@ -13,19 +13,22 @@ class MapScreen extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			latitude: 32.985957105146475,
-			longitude: -96.75138716605206
+			locationResult: null,
+			location: { 
+				coords: { 
+					latitude: 37.78825, 
+					longitude: -122.4324 
+				},
+			},
+			supermarket: {
+				latitude: 32.980089,
+				longitude: -96.766923
+			}
 		}
 	}
 
-	componentWillMount() {
-		if (Platform.OS === 'android' && !Constants.isDevice) {
-			this.setState({
-				errorMessage: 'Oops, this will not work on Sketch in an Android emulator. Try it on your device!',
-			});
-		} else {
-			this._getLocationAsync();
-		}
+	componentDidMount() {
+		this._getLocationAsync();
 	}
 
 	_getLocationAsync = async () => {
@@ -37,22 +40,35 @@ class MapScreen extends Component {
 		}
 
 		let location = await Location.getCurrentPositionAsync({});
-		this.setState({ location });
-		console.log(this.state.location)
+		this.setState({
+			location: location,
+			latitude: location.coords.latitude,
+			longitude: location.coords.longitude
+		});
+		console.log(this.state.longitude)
 	};
 
 	render() {
 		return (
 			<MapView
 				style={{ flex: 1 }}
-				initialRegion={{
-					latitude: this.state.latitude,
-					longitude: this.state.longitude,
+				region={{
+					latitude: this.state.location.coords.latitude,
+					longitude: this.state.location.coords.longitude,
 					latitudeDelta: 0.0922,
-					longitudeDelta: 0.0421,
-				}} 
+					longitudeDelta: 0.0421
+				}}
 			>
-				<Marker key={1} title="HAHA" coordinate={this.state.location} />
+				<MapView.Marker
+					coordinate={this.state.supermarket}
+					title="Tom Thumb"
+					description="Tom Thumb Supermarket"
+				/>
+				<MapView.Marker
+					coordinate={this.state.location.coords}
+					title="You"
+					description="Your current location"
+				/>
 			</MapView>
 		);
 	}

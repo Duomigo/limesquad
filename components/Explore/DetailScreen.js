@@ -5,9 +5,11 @@ import {
 	Text,
 	StyleSheet,
 	FlatList,
-	TouchableOpacity
+	TouchableOpacity,
+	AsyncStorage
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import axios from 'axios';
 
 import PotentialShopper from './PotentialShopper';
 
@@ -27,6 +29,27 @@ class DetailScreen extends Component {
 			)
 		}
    }
+
+   state = {
+	   orders: []
+   }
+
+   async componentDidMount() {
+	const token = await AsyncStorage.getItem('userToken', token);
+
+	axios.defaults.headers.common = {'Authorization': `bearer ${token}`}
+
+	try {
+		const response = await axios.get("http://localhost:3000/api/orders/");
+		const data = await response.data;
+		
+		this.setState ({
+			orders: data
+		})
+	} catch(err) {
+		console.log(JSON.stringify(err))
+	}
+}
 
    renderSeparator = () => {
 	return (
@@ -52,27 +75,10 @@ class DetailScreen extends Component {
 				</Text>
 				<FlatList
 					style={styles.potentialShoppersList}
-					data={[
-						{ key: "Devin", store: 'Walmart' },
-						{ key: "Jackson", store: 'Saigon' },
-						{ key: "James", store: 'Chick Fil A' },
-						{ key: "Joel", store: 'Moes' },
-						{ key: "John", store: 'Walmart' },
-						{ key: "Jillian", store: 'Walmart' },
-						{ key: "Jimmy", store: 'HMart Plano' },
-						{ key: "Julie", store: 'Walmart' },
-						{ key: "Devin", store: 'Walmart' },
-						{ key: "Jackson", store: 'Saigon' },
-						{ key: "James", store: 'Chick Fil A' },
-						{ key: "Joel", store: 'Moes' },
-						{ key: "John", store: 'Walmart' },
-						{ key: "Jillian", store: 'Walmart' },
-						{ key: "Jimmy", store: 'HMart Plano' },
-						{ key: "Julie", store: 'Walmart' }
-					]}
+					data={this.state.orders}
 					renderItem={({ item }) => 
 						<View>
-							<PotentialShopper item={item} />
+							<PotentialShopper item={item}/>
 						</View>
 					}
 					ItemSeparatorComponent={this.renderSeparator}

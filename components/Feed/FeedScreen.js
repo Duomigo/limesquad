@@ -5,15 +5,23 @@ import axios from 'axios';
 
 class ClassesScreen extends Component {
 
+	state = {
+		name: '',
+		image: 'null'
+	}
+
 	async componentDidMount() {
 		const token = await AsyncStorage.getItem('userToken', token);
 
 		axios.defaults.headers.common = {'Authorization': `bearer ${token}`}
 
 		try {
-			const response = await axios.get("https://localhost:3000/api/users/me");
+			const response = await axios.get("http://localhost:3000/api/users/me");
 			const data = await response.data;
-			console.log(data)
+			
+			this.setState ({
+				name: data.name
+			})
 		} catch(err) {
 			console.log(JSON.stringify(err))
 		}
@@ -31,9 +39,9 @@ class ClassesScreen extends Component {
           showsVerticalScrollIndicator={false}
         >
           <View style={styles.titleBar}>
-            <Image style={styles.avatar} source={require('../../assets/huy.jpg')} />
+            <Image style={styles.avatar} source={require('../../assets/demo.jpg')} />
             <Text style={styles.title}>Welcome back,</Text>
-            <Text style={styles.name}>Huy Pham</Text>   
+            <Text style={styles.name}>{this.state.name}</Text>   
           </View>
 
           <Text style={styles.subTitle}>

@@ -26,7 +26,7 @@ class ShopItem extends Component {
 			   }}
 			>
 				<View style={styles.titleBar}>
-					<Image style={styles.itemImage} source={{uri: item.image}} />
+					<Image style={styles.itemImage} source={item.image} />
 					<Text style={styles.itemTitle}>{item.name}</Text>
 					<Text style={styles.itemPlace}>{item.address}</Text>
 					<Text style={styles.itemPlace}>3 people can shop for you</Text>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
 	itemImage: {
 		width: 50,
 		height: 50,
-		backgroundColor: 'black',
+		backgroundColor: '#b8bece',
 		borderRadius: 3,
 		marginLeft: 15,
 		position: 'absolute',

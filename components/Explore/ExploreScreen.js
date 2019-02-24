@@ -13,42 +13,42 @@ const supermarkets = [
 	{
 		name: "Tom Thumb",
 		address: '1380 W Campbell Rd, Richardson, TX 75080',
-		image: "https://dynl.mktgcdn.com/p/sPl_wbgRNszw4xFHOAyDbkHmTQVulf9o-KDPq6V8bgE/320x176.jpg"
+		image: require('../../assets/shops/thumb.jpg')
 	},
 	{
 		name: "Walmart",
 		address: '15757 N Coit Rd, Dallas, TX 75248',
-		image: "http://s.thestreet.com/files/tsc/v2008/photos/contrib/uploads/ebe3b613-a848-11e7-ac45-8d3c52b5d95e.png"
+		image: require('../../assets/shops/wm.png')
 	},
 	{
 		name: "Target",
 		address: '16731 Coit Rd, Dallas, TX 75248',
-		image: "https://media3.s-nbcnews.com/j/newscms/2017_14/1958971/17804-target-346p-rs_9d9783007e2ab29d859618bd6763acee.fit-760w.jpg"
+		image: require('../../assets/shops/target.jpg')
 	},
 	{
 		name: "Sprouts",
 		address: '1343 W Campbell Rd, Richardson, TX 75080',
-		image: "http://s.thestreet.com/files/tsc/v2008/photos/contrib/uploads/ebe3b613-a848-11e7-ac45-8d3c52b5d95e.png"
+		image: require('../../assets/shops/sprouts.gif')
 	},
 	{
 		name: "HMart",
 		address: '3320 K Ave, Plano, TX 75074',
-		image: "http://s.thestreet.com/files/tsc/v2008/photos/contrib/uploads/ebe3b613-a848-11e7-ac45-8d3c52b5d95e.png"
+		image: require('../../assets/shops/hmart.jpg')
 	},
 	{
 		name: "Saigon Mall",
 		address: '3320 K Ave, Plano, TX 75074',
-		image: "http://s.thestreet.com/files/tsc/v2008/photos/contrib/uploads/ebe3b613-a848-11e7-ac45-8d3c52b5d95e.png"
+		image: require('../../assets/shops/saigon.jpg')
 	},
 	{
 		name: "Costco Wholesale",
 		address: '3800 N Central Expy, Plano, TX 75074',
-		image: "http://s.thestreet.com/files/tsc/v2008/photos/contrib/uploads/ebe3b613-a848-11e7-ac45-8d3c52b5d95e.png"
+		image: require('../../assets/shops/costco.jpg')
 	},
 	{
 		name: "Whole Foods",
 		address: '1411 E Renner Rd, Richardson, TX 75082',
-		image: "http://s.thestreet.com/files/tsc/v2008/photos/contrib/uploads/ebe3b613-a848-11e7-ac45-8d3c52b5d95e.png"
+		image: require('../../assets/shops/wf.jpg')
 	}
 ]
 

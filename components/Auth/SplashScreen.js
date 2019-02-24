@@ -4,7 +4,8 @@ import {
 	SafeAreaView,
 	Text,
 	TouchableOpacity,
-	StyleSheet
+	StyleSheet,
+	Image
 } from 'react-native';
 
 import { withNavigation } from 'react-navigation';
@@ -23,6 +24,10 @@ class SplashScreen extends Component {
 			<SafeAreaView style={styles.safeAreaContainer}>
 				<View style={styles.getStarted}>
 					<Text style={styles.welcomeText}>Welcome to Limesquad.</Text>
+					<Image 
+						source={require('../../assets/logo.png')}
+						style={styles.logo}
+					/>
 					<Text style={styles.headerText}>Don't be a starving #collegestudent.</Text>
 					<TouchableOpacity
 						style={styles.button}
@@ -104,5 +109,11 @@ const styles = StyleSheet.create({
 		fontFamily: 'Avenir Next',
 		fontSize: 16,
 		fontWeight: '600'
-	}
+	},
+	logo: {
+		height: 90,
+		width: 90,
+		marginTop: 10,
+		marginBottom: 10
+	},
 })

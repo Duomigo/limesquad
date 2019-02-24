@@ -23,14 +23,14 @@ class OrderHistory extends Component {
 				<Text style={styles.titleHeader}>Your History</Text>
 				<FlatList
 					data={[
-						{ key: "Devin", store: 'Walmart' },
-						{ key: "Jackson", store: 'Saigon' },
-						{ key: "James", store: 'Chick Fil A' },
-						{ key: "Joel", store: 'Moes' },
-						{ key: "John", store: 'Walmart' },
-						{ key: "Jillian", store: 'Walmart' },
-						{ key: "Jimmy", store: 'HMart Plano' },
-						{ key: "Julie", store: 'Walmart' }
+						{ key: "Devin", ingre:"Carrots", store: 'Walmart' },
+						{ key: "Jackson", ingre:"Chips", store: 'Saigon Mall' },
+						{ key: "James", ingre:"Pork", store: 'Walmart' },
+						{ key: "Joel", ingre:"Beef", store: 'HMart Plano' },
+						{ key: "John", ingre:"Broccoli", store: 'Sprouts' },
+						{ key: "Jillian", ingre:"Shrimps", store: 'Walmart' },
+						{ key: "Jimmy", ingre:"Grapes", store: 'HMart Plano' },
+						{ key: "Julie", ingre:"Soy Sauce", store: 'Walmart' }
 					]}
 					renderItem={({ item }) => <OrderHistoryItem item={item} />}
 					ItemSeparatorComponent={this.renderSeparator}

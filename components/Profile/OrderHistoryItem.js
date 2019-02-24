@@ -10,7 +10,7 @@ class OrderHistoryItem extends Component {
 		const { item } = this.props
 		return (
 			<View style={styles.container}>
-				<Text style={styles.itemTitle}>{item.key} bought X for You</Text>
+				<Text style={styles.itemTitle}>{item.key} bought {item.ingre} for You</Text>
 				<Text style={styles.itemPlace}>at {item.store}</Text>
 			</View>
 		)
