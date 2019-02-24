@@ -1,7 +1,23 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, SafeAreaView, AsyncStorage } from 'react-native';
+
+import axios from 'axios';
 
 class ClassesScreen extends Component {
+
+	async componentDidMount() {
+		const token = await AsyncStorage.getItem('userToken', token);
+
+		axios.defaults.headers.common = {'Authorization': `bearer ${token}`}
+
+		try {
+			const response = await axios.get("https://localhost:3000/api/users/me");
+			const data = await response.data;
+			console.log(data)
+		} catch(err) {
+			console.log(JSON.stringify(err))
+		}
+	}
 
   static navigationOptions = {
     header: null

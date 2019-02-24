@@ -80,8 +80,21 @@ class SignInScreen extends Component {
 	}
 
 	_signInAsync = async () => {
-		await AsyncStorage.setItem('userToken', 'abc');
-		this.props.navigation.navigate('App');
+		const loginData = {
+			username: this.state.username,
+			password: this.state.password
+		}
+		console.log(loginData)
+		try {
+			const response = await axios.post('http://localhost:3000/auth/signin', loginData);
+			const token = await response.data.token
+			
+			await AsyncStorage.setItem('userToken', token);
+			this.props.navigation.navigate('App');
+		} catch (err) {
+			const error = await JSON.stringify(err)
+			console.log(error)
+		}
 	};
 }
 
