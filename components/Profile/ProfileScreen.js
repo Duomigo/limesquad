@@ -17,7 +17,7 @@ import { Ionicons } from '@expo/vector-icons';
 import axios from 'axios';
 
 import OrderHistory from './OrderHistory'
-import Schedule from './Schedule'
+import ProfileSchedule from './ProfileSchedule'
 
 class ClassesScreen extends Component {
 
@@ -78,7 +78,7 @@ class ClassesScreen extends Component {
 		try {
 			const response = await axios.post('https://limesquad.herokuapp.com/api/orders', loginData);
 			const token = await response.data.token
-			
+
 			await AsyncStorage.setItem('userToken', token);
 			this.props.navigation.goBack();
 		} catch (err) {
@@ -184,10 +184,10 @@ class ClassesScreen extends Component {
 						/>
 						<View>
 							{(this.state.selectedIndex === 0) ? (
-								<Schedule />
+								<ProfileSchedule />
 							) : (
-									<OrderHistory />
-								)}
+								<OrderHistory />
+							)}
 						</View>
 					</SafeAreaView>
 				</ScrollView>
@@ -324,18 +324,20 @@ const styles = StyleSheet.create({
 		marginRight: 70,
 	},
 	avatar: {
-		width: 80,
-		height: 80,
+		width: 70,
+		height: 70,
+		marginLeft: 20,
+		position: 'absolute',
 		backgroundColor: 'black',
-		borderRadius: 40,
+		borderRadius: 35,
 	},
 	titleBar: {
 		width: '100%',
-		marginTop: 15,
-		justifyContent: 'center',
-		alignItems: 'center',
+		height: 80,
+		marginTop: 15
 	},
 	title: {
+		marginLeft: 100,
 		fontSize: 16,
 		fontFamily: 'Avenir Next',
 		color: '#b8bece',
@@ -351,6 +353,7 @@ const styles = StyleSheet.create({
 		textTransform: 'uppercase'
 	},
 	name: {
+		marginLeft: 100,
 		fontSize: 20,
 		fontFamily: 'Avenir Next',
 		color: '#3c4560',

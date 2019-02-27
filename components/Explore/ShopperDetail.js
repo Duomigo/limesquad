@@ -13,7 +13,7 @@ import {
 
 import { Ionicons } from '@expo/vector-icons';
 
-class PotentialShopper extends Component {
+class ShopperDetail extends Component {
 	state = {
 		modalVisible: false,
 		avatar: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Default-avatar.jpg"
@@ -122,7 +122,7 @@ class PotentialShopper extends Component {
 	}
 }
 
-export default PotentialShopper;
+export default ShopperDetail;
 
 const styles = StyleSheet.create({
 	container: {

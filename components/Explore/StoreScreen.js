@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 
-import ShopItem from './ShopItem'
+import StoreDetail from './StoreDetail'
 
 const supermarkets = [
 	{
@@ -46,7 +46,7 @@ const supermarkets = [
 	}
 ]
 
-class ShopScreen extends Component {
+class StoreScreen extends Component {
 	renderSeparator = () => {
 		return (
 			<View
@@ -66,7 +66,7 @@ class ShopScreen extends Component {
 				<Text style={styles.titleHeader}>Grocery Stores Near You</Text>
 				<FlatList
 					data={supermarkets}
-					renderItem={({ item }) => <ShopItem item={item} />}
+					renderItem={({ item }) => <StoreDetail item={item} />}
 					ItemSeparatorComponent={this.renderSeparator}
 				/>
 			</View>
@@ -74,7 +74,7 @@ class ShopScreen extends Component {
 	}
 }
 
-export default ShopScreen;
+export default StoreScreen;
 
 const styles = StyleSheet.create({
 	container: {

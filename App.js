@@ -22,8 +22,8 @@ import SignInScreen from './components/Auth/SignInScreen'
 import AuthLoadingScreen from './components/Auth/AuthLoadingScreen'
 import SplashScreen from './components/Auth/SplashScreen';
 
-import DetailScreen from './components/Explore/DetailScreen'
-import ShopScreen from './components/Explore/ShopScreen';
+import ShoppersScreen from './components/Explore/ShoppersScreen'
+import StoreScreen from './components/Explore/StoreScreen';
 import MapScreen from './components/Explore/MapScreen'
 
 
@@ -33,11 +33,11 @@ const ExploreStack = createStackNavigator({
 	Explore: {
 		screen: ExploreScreen
 	},
-	Detail: {
-		screen: DetailScreen
+	Shopper: {
+		screen: ShoppersScreen
 	},
-	Shop: {
-		screen: ShopScreen
+	Store: {
+		screen: StoreScreen
 	},
 	Map: {
 		screen: MapScreen

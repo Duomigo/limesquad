@@ -9,7 +9,7 @@ import {
 
 import { withNavigation } from 'react-navigation' 
 
-class DetailItem extends Component {
+class StoreDetail extends Component {
 	render() {
 		const { item } = this.props;
 
@@ -17,7 +17,7 @@ class DetailItem extends Component {
 			<TouchableOpacity 
 				style={styles.container}
 				onPress={() => {
-					this.props.navigation.navigate('Detail', {
+					this.props.navigation.navigate('Shopper', {
 						name: item.name,
 						address: item.address,
 						image: item.image,
@@ -26,7 +26,7 @@ class DetailItem extends Component {
 			   }}
 			>
 				<View style={styles.titleBar}>
-					<Image style={styles.itemImage} source={{uri: item.image}} />
+					<Image style={styles.itemImage} source={item.image} />
 					<Text style={styles.itemTitle}>{item.name}</Text>
 					<Text style={styles.itemPlace}>{item.address}</Text>
 					<Text style={styles.itemPlace}>3 people can shop for you</Text>
@@ -36,7 +36,7 @@ class DetailItem extends Component {
 	}
 }
 
-export default withNavigation(DetailItem);
+export default withNavigation(StoreDetail);
 
 const styles = StyleSheet.create({
 	container: {
@@ -49,16 +49,16 @@ const styles = StyleSheet.create({
 		fontWeight: '500',
 	},
 	itemTitle: {
-		fontSize: 18,
+		fontSize: 16,
 		fontFamily: 'Avenir Next',
 		color: '#3c4560',
 		fontWeight: '700',
 		marginTop: -3
 	},
 	itemImage: {
-		width: 100,
-		height: 100,
-		backgroundColor: 'black',
+		width: 50,
+		height: 50,
+		backgroundColor: '#b8bece',
 		borderRadius: 3,
 		marginLeft: 15,
 		position: 'absolute',
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
 	},
 	titleBar: {
 		width: '100%',
-		paddingLeft: 125,
+		paddingLeft: 75,
 		marginTop: 5
 	},
 })

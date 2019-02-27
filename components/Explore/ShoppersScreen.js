@@ -11,9 +11,9 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import axios from 'axios';
 
-import PotentialShopper from './PotentialShopper';
+import ShopperDetail from './ShopperDetail';
 
-class DetailScreen extends Component {
+class ShoppersScreen extends Component {
 	static navigationOptions = ({ navigation }) => {
 		return {
 			 title: navigation.getParam('name', ''),
@@ -78,7 +78,7 @@ class DetailScreen extends Component {
 					data={this.state.orders}
 					renderItem={({ item }) => 
 						<View>
-							<PotentialShopper item={item}/>
+							<ShopperDetail item={item}/>
 						</View>
 					}
 					ItemSeparatorComponent={this.renderSeparator}
@@ -88,7 +88,7 @@ class DetailScreen extends Component {
 	}
 }
 
-export default DetailScreen;
+export default ShoppersScreen;
 
 const styles = StyleSheet.create({
 	titleHeader: {
