@@ -6,7 +6,8 @@ import {
 	ScrollView,
 	TouchableOpacity,
 	AsyncStorage,
-	FlatList
+	FlatList,
+	RefreshControl
 } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
@@ -88,6 +89,10 @@ class ClassesScreen extends Component {
 	}
 
 	async componentDidMount() {
+		this.fetchProfile();
+	}
+
+	async fetchProfile() {
 		const token = await AsyncStorage.getItem('userToken', token);
 
 		axios.defaults.headers.common = { 'Authorization': `bearer ${token}` }
@@ -106,6 +111,7 @@ class ClassesScreen extends Component {
 	}
 
 	state = {
+		refreshing: false,
 		selectedIndex: 0,
 		name: 'Limesquad',
 		username: 'limesquad',
@@ -114,6 +120,13 @@ class ClassesScreen extends Component {
 		where: '',
 		when: ''
 	}
+
+	_onRefresh = () => {
+		this.setState({refreshing: true});
+		this.fetchProfile().then(() => {
+		  this.setState({refreshing: false});
+		});
+	  }
 
 	renderSeparator = () => {
 		return (
@@ -132,6 +145,12 @@ class ClassesScreen extends Component {
 		return (
 			<View style={styles.container}>
 				<ScrollView
+					refreshControl={
+						<RefreshControl
+							refreshing={this.state.refreshing}
+							onRefresh={this._onRefresh}
+						/>
+					}
 					style={styles.container}
 					showsVerticalScrollIndicator={false}
 				>
