@@ -40,7 +40,7 @@ class DetailScreen extends Component {
 	axios.defaults.headers.common = {'Authorization': `bearer ${token}`}
 
 	try {
-		const response = await axios.get("http://localhost:3000/api/orders/");
+		const response = await axios.get("https://limesquad.herokuapp.com/api/orders/");
 		const data = await response.data;
 		
 		this.setState ({

@@ -16,7 +16,16 @@ import { Ionicons } from '@expo/vector-icons';
 class PotentialShopper extends Component {
 	state = {
 		modalVisible: false,
+		avatar: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Default-avatar.jpg"
 	};
+
+	componentDidMount() {
+		const num = Math.floor(Math.random() * 100);     // returns a random integer from 0 to 99
+		const avatar = `https://randomuser.me/api/portraits/women/${num}.jpg`
+		this.setState({
+			avatar
+		})
+	}
 
 	setModalVisible(visible) {
 		this.setState({ modalVisible: visible });
@@ -24,8 +33,7 @@ class PotentialShopper extends Component {
 
 	render() {
 		const { item } = this.props
-		const num = Math.floor(Math.random() * 100);     // returns a random integer from 0 to 99
-		const avatar = `https://randomuser.me/api/portraits/women/${num}.jpg`
+		const { avatar } = this.state
 
 		return (
 			<View style={styles.container}>
@@ -85,6 +93,15 @@ class PotentialShopper extends Component {
 									}}>
 									<Text style={styles.signInButtonText}>
 										Request Order
+									</Text>
+								</TouchableHighlight>
+								<TouchableHighlight
+									style={styles.cancelButton}
+									onPress={() => {
+										this.setModalVisible(!this.state.modalVisible);
+									}}>
+									<Text style={styles.cancelButtonText}>
+										Cancel
 									</Text>
 								</TouchableHighlight>
 							</View>
@@ -204,5 +221,22 @@ const styles = StyleSheet.create({
 		fontSize: 18,
 		fontWeight: '600',
 		color: 'white'
+	},
+	cancelButton: {
+		marginLeft: 20,
+		marginRight: 20,
+		marginTop: 10,
+		backgroundColor: "#b8bece",
+		borderRadius: 5,
+		height: 50,
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
+	cancelButtonText: {
+		fontFamily: 'Avenir Next',
+		fontWeight: '500',
+		fontSize: 18,
+		fontWeight: '600',
+		color: '#3c4560'
 	},
 })
