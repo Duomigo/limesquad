@@ -90,8 +90,8 @@ const AuthStack = createStackNavigator({
 		screen: SplashScreen
 	}
 }, {
-		initialRouteName: 'Splash'
-	});
+	initialRouteName: 'Splash'
+});
 
 export default createAppContainer(createSwitchNavigator(
 	{

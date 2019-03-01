@@ -33,8 +33,7 @@ class ShoppersScreen extends Component {
    }
 
    componentDidMount() {
-	   this.props.fetchOrders();
-	   console.log(this.props.orders)
+	   //this.props.fetchOrders();
    }
 
    renderSeparator = () => {

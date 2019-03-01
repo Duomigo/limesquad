@@ -45,7 +45,6 @@ class MapScreen extends Component {
 			latitude: location.coords.latitude,
 			longitude: location.coords.longitude
 		});
-		console.log(this.state.longitude)
 	};
 
 	render() {

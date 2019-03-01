@@ -88,7 +88,7 @@ class ProfileScreen extends Component {
 	}
 
 	componentDidMount() {
-		this.props.fetchProfile();
+		//this.props.fetchProfile();
 	}
 
 	state = {

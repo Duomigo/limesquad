@@ -19,8 +19,7 @@ class ExploreScreen extends Component {
 	}
 
 	componentDidMount() {
-		this.props.fetchStores()
-		console.log(this.props.stores)
+		//this.props.fetchStores()
 	}
 
 	renderSeparator = () => {

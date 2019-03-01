@@ -38,7 +38,6 @@ export default class App extends Component {
 			text = this.state.errorMessage;
 		} else if (this.state.location) {
 			text = JSON.stringify(this.state.location);
-			console.log(this.state.location)
 		}
 
 		return (

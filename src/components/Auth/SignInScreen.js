@@ -10,8 +10,14 @@ import {
 	Image
 } from 'react-native';
 
+import { connect } from 'react-redux';
+import {
+	fetchOrders,
+	fetchProfile,
+	fetchStores
+} from '../../actions'
+
 import axios from 'axios';
-import SplashScreen from './SplashScreen';
 
 class SignInScreen extends Component {
 	static navigationOptions = {
@@ -25,6 +31,31 @@ class SignInScreen extends Component {
 			password: '',
 			error: ''
 		};
+	}
+
+	_signInAsync = async () => {
+		const loginData = {
+			username: this.state.username,
+			password: this.state.password
+		}
+		try {
+			const response = await axios.post('http://limesquad.herokuapp.com/auth/signin', loginData);
+			const token = await response.data.token
+			
+			await AsyncStorage.setItem('userToken', token);
+			this.props.navigation.navigate('App');
+			
+			await this.fetchAllData();
+		} catch (err) {
+			const error = await JSON.stringify(err)
+			console.log(error)
+		}
+	};
+
+	fetchAllData = async () => {
+		this.props.fetchOrders();
+		this.props.fetchProfile();
+		this.props.fetchStores();
 	}
 
 	render() {
@@ -79,27 +110,18 @@ class SignInScreen extends Component {
 			</SafeAreaView>
 		);
 	}
-
-	_signInAsync = async () => {
-		const loginData = {
-			username: this.state.username,
-			password: this.state.password
-		}
-		console.log(loginData)
-		try {
-			const response = await axios.post('http://localhost:3000/auth/signin', loginData);
-			const token = await response.data.token
-			
-			await AsyncStorage.setItem('userToken', token);
-			this.props.navigation.navigate('App');
-		} catch (err) {
-			const error = await JSON.stringify(err)
-			console.log(error)
-		}
-	};
 }
 
-export default SignInScreen;
+const mapStateToProps = (state) => {
+	return {
+		
+	}
+}
+
+export default connect(
+	mapStateToProps,
+	{ fetchOrders, fetchProfile, fetchStores }
+)(SignInScreen);
 
 const styles = StyleSheet.create({
 	container: {

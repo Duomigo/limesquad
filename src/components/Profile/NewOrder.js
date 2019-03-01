@@ -14,9 +14,8 @@ class NewOrder extends Component {
 			supermarket: this.state.where,
 			time: this.state.when
 		}
-		console.log(loginData)
 		try {
-			const response = await axios.post('http://localhost:3000/api/orders', loginData);
+			const response = await axios.post('http://limesquad.herokuapp.com/api/orders', loginData);
 			const token = await response.data.token
 
 			await AsyncStorage.setItem('userToken', token);
