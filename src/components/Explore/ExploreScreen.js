@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 import { connect } from 'react-redux';
+import { fetchStores } from '../../actions'
 
 import StoreDetail from './StoreDetail';
 
@@ -18,6 +19,7 @@ class ExploreScreen extends Component {
 	}
 
 	componentDidMount() {
+		this.props.fetchStores()
 		console.log(this.props.stores)
 	}
 
@@ -39,7 +41,7 @@ class ExploreScreen extends Component {
 			<SafeAreaView style={styles.container}>
 				<Text style={styles.titleHeader}>Grocery Stores Near You</Text>
 				<FlatList
-					data={this.props.stores}
+					data={this.props.groceries}
 					renderItem={({ item }) => <StoreDetail item={item} />}
 					ItemSeparatorComponent={this.renderSeparator}
 				/>
@@ -50,12 +52,13 @@ class ExploreScreen extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		stores: state.stores
+		groceries: state.groceries
 	}
 }
 
 export default connect(
-	mapStateToProps
+	mapStateToProps,
+	{ fetchStores }
 )(ExploreScreen);
 
 const styles = StyleSheet.create({

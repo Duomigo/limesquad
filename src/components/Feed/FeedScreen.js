@@ -16,7 +16,7 @@ class ClassesScreen extends Component {
 		axios.defaults.headers.common = {'Authorization': `bearer ${token}`}
 
 		try {
-			const response = await axios.get("https://limesquad.herokuapp.com/api/users/me");
+			const response = await axios.get("http://localhost:3000/api/users/me");
 			const data = await response.data;
 			
 			this.setState ({

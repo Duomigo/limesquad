@@ -5,6 +5,6 @@ import ordersReducer from './ordersReducer';
 
 export default combineReducers({
 	profile: profileReducer,
-	stores: storesReducer,
+	groceries: storesReducer,
 	orders: ordersReducer
 })

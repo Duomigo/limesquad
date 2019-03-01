@@ -1,6 +1,4 @@
-const FETCH_STORES = 'FETCH_STORES'
-
-const stores = [
+const STORES = [
 	{
 		name: "Tom Thumb",
 		address: '1380 W Campbell Rd, Richardson, TX 75080',
@@ -43,8 +41,15 @@ const stores = [
 	}
 ]
 
-const storesReducer = (state=stores, action) => {
-	return state
+const FETCH_STORES = 'FETCH_STORES';
+
+const storesReducer = (state=[], action) => {
+	switch (action.type) {
+		case FETCH_STORES:
+			return action.payload
+		default:
+			return state
+	}
 }
 
 export default storesReducer;

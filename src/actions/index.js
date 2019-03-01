@@ -3,7 +3,7 @@ import {
 	AsyncStorage
 } from 'react-native'
 
-export const fetchProfile = () => async dispatch => {
+export const fetchProfile = () => async (dispatch) => {
 	const token = await AsyncStorage.getItem('userToken', token);
 	limesquad.defaults.headers.common = { 'Authorization': `bearer ${token}` }
 
@@ -19,7 +19,7 @@ export const fetchProfile = () => async dispatch => {
 	}
 }
 
-export const fetchOrders = () => async dispatch => {
+export const fetchOrders = () => async (dispatch) => {
 	const token = await AsyncStorage.getItem('userToken', token);
 	limesquad.defaults.headers.common = { 'Authorization': `bearer ${token}`}
 
@@ -28,6 +28,22 @@ export const fetchOrders = () => async dispatch => {
 
 		dispatch({
 			type: 'FETCH_ORDERS',
+			payload: response.data
+		})
+	} catch(err) {
+		console.log(err);
+	}
+}
+
+export const fetchStores = () => async (dispatch) => {
+	const token = await AsyncStorage.getItem('userToken', token);
+	limesquad.defaults.headers.common = { 'Authorization': `bearer ${token}`}
+
+	try {
+		const response = await limesquad.get('/api/groceries');
+
+		dispatch({
+			type: 'FETCH_STORES',
 			payload: response.data
 		})
 	} catch(err) {

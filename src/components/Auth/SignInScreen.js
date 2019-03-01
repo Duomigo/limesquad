@@ -87,7 +87,7 @@ class SignInScreen extends Component {
 		}
 		console.log(loginData)
 		try {
-			const response = await axios.post('https://limesquad.herokuapp.com/auth/signin', loginData);
+			const response = await axios.post('http://localhost:3000/auth/signin', loginData);
 			const token = await response.data.token
 			
 			await AsyncStorage.setItem('userToken', token);
