@@ -14,10 +14,6 @@ import { connect } from 'react-redux';
 import { fetchProfile } from '../../actions'
 
 import { Ionicons } from '@expo/vector-icons';
-import axios from 'axios';
-
-import ProfileSchedule from './ProfileSchedule';
-import OrderHistory from './OrderHistory';
 
 const ORDERS = [
 	{

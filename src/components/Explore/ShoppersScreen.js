@@ -9,7 +9,9 @@ import {
 	AsyncStorage
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import axios from 'axios';
+
+import { connect } from 'react-redux';
+import { fetchOrders } from '../../actions'
 
 import ShopperDetail from './ShopperDetail';
 
@@ -30,26 +32,10 @@ class ShoppersScreen extends Component {
 		}
    }
 
-   state = {
-	   orders: []
+   componentDidMount() {
+	   this.props.fetchOrders();
+	   console.log(this.props.orders)
    }
-
-   async componentDidMount() {
-	const token = await AsyncStorage.getItem('userToken', token);
-
-	axios.defaults.headers.common = {'Authorization': `bearer ${token}`}
-
-	try {
-		const response = await axios.get("https://limesquad.herokuapp.com/api/orders/");
-		const data = await response.data;
-		
-		this.setState ({
-			orders: data
-		})
-	} catch(err) {
-		console.log(JSON.stringify(err))
-	}
-}
 
    renderSeparator = () => {
 	return (
@@ -75,7 +61,7 @@ class ShoppersScreen extends Component {
 				</Text>
 				<FlatList
 					style={styles.potentialShoppersList}
-					data={this.state.orders}
+					data={this.props.orders}
 					renderItem={({ item }) => 
 						<View>
 							<ShopperDetail item={item}/>
@@ -88,7 +74,16 @@ class ShoppersScreen extends Component {
 	}
 }
 
-export default ShoppersScreen;
+const mapStateToProps = (state) => {
+	return {
+		orders: state.orders
+	}
+}
+
+export default connect(
+	mapStateToProps,
+	{ fetchOrders }
+)(ShoppersScreen);
 
 const styles = StyleSheet.create({
 	titleHeader: {

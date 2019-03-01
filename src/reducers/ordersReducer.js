@@ -8,3 +8,5 @@ const ordersReducer = (state=[], action) => {
 			return state;
 	}
 }
+
+export default ordersReducer;
