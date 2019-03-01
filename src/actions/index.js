@@ -4,12 +4,11 @@ import {
 } from 'react-native'
 
 export const fetchProfile = () => async dispatch => {
-	console.log("MAO")
 	const token = await AsyncStorage.getItem('userToken', token);
 	limesquad.defaults.headers.common = { 'Authorization': `bearer ${token}` }
 
 	try {
-		let response = await limesquad.get('/api/users/me');
+		const response = await limesquad.get('/api/users/me');
 
 		dispatch({
 			type: 'FETCH_PROFILE',
@@ -17,5 +16,21 @@ export const fetchProfile = () => async dispatch => {
 		})
 	} catch(err) {
 		console.log(err)
+	}
+}
+
+export const fetchOrders = () => async dispatch => {
+	const token = await AsyncStorage.getItem('userToken', token);
+	limesquad.defaults.headers.common = { 'Authorization': `bearer ${token}`}
+
+	try {
+		const response = await limesquad.get('/api/orders');
+
+		dispatch({
+			type: 'FETCH_ORDERS',
+			payload: response.data
+		})
+	} catch(err) {
+		console.log(err);
 	}
 }

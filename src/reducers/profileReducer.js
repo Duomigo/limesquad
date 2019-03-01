@@ -1,6 +1,6 @@
 const FETCH_PROFILE = 'FETCH_PROFILE'
 
-export default (state = [], action) => {
+const profileReducer = (state = [], action) => {
 	switch (action.type) {
 		case FETCH_PROFILE:
 			console.log(action)
@@ -9,3 +9,5 @@ export default (state = [], action) => {
 			return state;
 	}
 }
+
+export default profileReducer;

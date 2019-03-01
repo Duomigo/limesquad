@@ -95,31 +95,9 @@ class ProfileScreen extends Component {
 		this.props.fetchProfile();
 	}
 
-	async ffetchProfile() {
-		const token = await AsyncStorage.getItem('userToken', token);
-
-		axios.defaults.headers.common = { 'Authorization': `bearer ${token}` }
-
-		try {
-			const response = await axios.get("https://limesquad.herokuapp.com/api/users/me");
-			const data = await response.data;
-
-			this.setState({
-				name: data.name,
-				username: data.username
-			})
-		} catch (err) {
-			console.log(JSON.stringify(err))
-		}
-	}
-
 	state = {
 		refreshing: false,
 		selectedIndex: 0,
-		name: 'Limesquad',
-		username: 'limesquad',
-		image: 'null',
-		modalVisible: false,
 		where: '',
 		when: ''
 	}
