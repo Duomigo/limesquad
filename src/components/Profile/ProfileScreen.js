@@ -10,6 +10,9 @@ import {
 	RefreshControl
 } from 'react-native';
 
+import { connect } from 'react-redux';
+import { fetchProfile } from '../../actions'
+
 import { Ionicons } from '@expo/vector-icons';
 import axios from 'axios';
 
@@ -70,7 +73,7 @@ const OUT = [
 	}
 ]
 
-class ClassesScreen extends Component {
+class ProfileScreen extends Component {
 
 	static navigationOptions = ({ navigation }) => {
 		return {
@@ -88,11 +91,11 @@ class ClassesScreen extends Component {
 		}
 	}
 
-	async componentDidMount() {
-		this.fetchProfile();
+	componentDidMount() {
+		this.props.fetchProfile();
 	}
 
-	async fetchProfile() {
+	async ffetchProfile() {
 		const token = await AsyncStorage.getItem('userToken', token);
 
 		axios.defaults.headers.common = { 'Authorization': `bearer ${token}` }
@@ -123,7 +126,7 @@ class ClassesScreen extends Component {
 
 	_onRefresh = () => {
 		this.setState({refreshing: true});
-		this.fetchProfile().then(() => {
+		this.props.fetchProfile().then(() => {
 		  this.setState({refreshing: false});
 		});
 	  }
@@ -142,6 +145,8 @@ class ClassesScreen extends Component {
 	};
 
 	render() {
+		const { profile } = this.props;
+		
 		return (
 			<View style={styles.container}>
 				<ScrollView
@@ -155,9 +160,9 @@ class ClassesScreen extends Component {
 					showsVerticalScrollIndicator={false}
 				>
 					<View style={styles.titleBar}>
-						<Image style={styles.avatar} source={require('../../assets/demo.jpg')} />
-						<Text style={styles.name}>{this.state.name}</Text>
-						<Text style={styles.title}>@{this.state.username}</Text>
+						<Image style={styles.avatar} source={require('../../../assets/demo.jpg')} />
+						<Text style={styles.name}>{profile.name}</Text>
+						<Text style={styles.title}>@{profile.username}</Text>
 					</View>
 
 					{/* <Text style={styles.subTitle}>
@@ -203,7 +208,16 @@ class ClassesScreen extends Component {
 	}
 }
 
-export default ClassesScreen;
+const mapStateToProps = (state) => {
+	return {
+		profile: state.profile
+	}
+}
+
+export default connect(
+	mapStateToProps,
+	{ fetchProfile }
+)(ProfileScreen);
 
 const styles = StyleSheet.create({
 	//// sdjljsd

@@ -25,7 +25,7 @@ class SplashScreen extends Component {
 				<View style={styles.getStarted}>
 					<Text style={styles.welcomeText}>Welcome to Limesquad.</Text>
 					<Image 
-						source={require('../../assets/logo.png')}
+						source={require('../../../assets/logo.png')}
 						style={styles.logo}
 					/>
 					<Text style={styles.headerText}>Don't be a starving #collegestudent.</Text>

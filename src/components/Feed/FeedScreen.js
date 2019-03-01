@@ -39,7 +39,7 @@ class ClassesScreen extends Component {
           showsVerticalScrollIndicator={false}
         >
           <View style={styles.titleBar}>
-            <Image style={styles.avatar} source={require('../../assets/demo.jpg')} />
+            <Image style={styles.avatar} source={require('../../../assets/demo.jpg')} />
             <Text style={styles.title}>Welcome back,</Text>
             <Text style={styles.name}>{this.state.name}</Text>   
           </View>
