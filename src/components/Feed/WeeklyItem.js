@@ -27,7 +27,7 @@ class WeeklyItem extends Component {
 			   }}
 			>
 				<View style={styles.titleBar}>
-					{/* <Image style={styles.itemImage} source={{uri: `${baseUrl}${item.image}`}} /> */}
+					<Image style={styles.itemImage} source={{uri: 'http://s3.amazonaws.com/general-assets/monday-200x200.png'}} />
 					<Text style={styles.itemTitle}>{item.name}</Text>
 					<Text style={styles.itemPlace}>{item.desc}</Text>
 				</View>
@@ -56,13 +56,13 @@ const styles = StyleSheet.create({
 		marginTop: -3
 	},
 	itemImage: {
-		width: 50,
-		height: 50,
+		width: 45,
+		height: 45,
 		backgroundColor: '#b8bece',
 		borderRadius: 3,
 		marginLeft: 15,
 		position: 'absolute',
-		top: 0,
+		top: -2.5,
 		left: 0
 	},
 	titleBar: {

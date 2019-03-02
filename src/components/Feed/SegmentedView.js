@@ -28,7 +28,9 @@ class SegmentedView extends Component {
 		return (
 			<View>
 				<SegmentedControlTab
-					tabsContainerStyle={styles.segmented}
+					tabsContainerStyle={styles.tabsContainerStyle}
+					tabStyle={styles.tabStyle}
+					tabTextStyle={styles.tabTextStyle}
 					values={["Today", "Weekly"]}
 					selectedIndex={this.state.selectedIndex}
 					onTabPress={this.handleIndexChange}
@@ -48,10 +50,19 @@ class SegmentedView extends Component {
 export default SegmentedView;
 
 const styles = StyleSheet.create({
-	segmented: {
+	tabsContainerStyle: {
 		marginLeft: 30,
 		marginRight: 30,
 		marginTop: 10,
-		marginBottom: 10
+		marginBottom: 10,
+		backgroundColor: 'transparent',
+	},
+	tabStyle: {
+		borderWidth: 0
+	},
+	tabTextStyle: {
+		fontFamily: 'Avenir Next',
+		fontWeight: '600'
+
 	}
 })

@@ -42,15 +42,17 @@ class ClassesScreen extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<View style={styles.titleBar}>
-					<Image style={styles.avatar} source={require('../../../assets/demo.jpg')} />
-					<Text style={styles.title}>Welcome back,</Text>
-					<Text style={styles.name}>{this.state.name}</Text>
-				</View>
+				<View style={styles.titleHeader}>
+					<View style={styles.titleBar}>
+						<Image style={styles.avatar} source={require('../../../assets/demo.jpg')} />
+						<Text style={styles.title}>Welcome back,</Text>
+						<Text style={styles.name}>{this.state.name}</Text>
+					</View>
 
-				<Text style={styles.subTitle}>
-					Your Dining Schedule
-          		</Text>
+					<Text style={styles.subTitle}>
+						Your Dining Schedule
+					</Text>
+				</View>
 
 				<SegmentedView />
 			</View>
@@ -66,8 +68,8 @@ const styles = StyleSheet.create({
 		color: 'red',
 		backgroundColor: '#F5F6F7'
 	},
-	cover: {
-
+	titleHeader: {
+		//backgroundColor: '#20AAEA'
 	},
 	avatar: {
 		width: 44,
