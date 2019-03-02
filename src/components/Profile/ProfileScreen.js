@@ -120,6 +120,10 @@ class ProfileScreen extends Component {
 
 	render() {
 		const { profile } = this.props;
+		const baseUrlProfileImage = 'http://localhost:3000/public/profilepic/'
+
+		const god = `${baseUrlProfileImage}${profile.image}`
+		console.log(god)
 		
 		return (
 			<View style={styles.container}>
@@ -134,7 +138,7 @@ class ProfileScreen extends Component {
 					showsVerticalScrollIndicator={false}
 				>
 					<View style={styles.titleBar}>
-						<Image style={styles.avatar} source={require('../../../assets/demo.jpg')} />
+						<Image style={styles.avatar} source={{ uri: `${baseUrlProfileImage}${profile.picture}`}} />
 						<Text style={styles.name}>{profile.name}</Text>
 						<Text style={styles.title}>@{profile.username}</Text>
 					</View>

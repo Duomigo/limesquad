@@ -15,7 +15,7 @@ class NewOrder extends Component {
 			time: this.state.when
 		}
 		try {
-			const response = await axios.post('http://limesquad.herokuapp.com/api/orders', loginData);
+			const response = await axios.post('http://localhost:3000/api/orders', loginData);
 			const token = await response.data.token
 
 			await AsyncStorage.setItem('userToken', token);

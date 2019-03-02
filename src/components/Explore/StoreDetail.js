@@ -12,6 +12,7 @@ import { withNavigation } from 'react-navigation'
 class StoreDetail extends Component {
 	render() {
 		const { item } = this.props;
+		const baseUrl = 'http://localhost:3000/public/supermarketpic/'
 
 		return (
 			<TouchableOpacity 
@@ -26,7 +27,7 @@ class StoreDetail extends Component {
 			   }}
 			>
 				<View style={styles.titleBar}>
-					<Image style={styles.itemImage} source={item.image} />
+					<Image style={styles.itemImage} source={{uri: `${baseUrl}${item.image}`}} />
 					<Text style={styles.itemTitle}>{item.name}</Text>
 					<Text style={styles.itemPlace}>{item.address}</Text>
 					<Text style={styles.itemPlace}>3 people can shop for you</Text>
