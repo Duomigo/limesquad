@@ -63,8 +63,8 @@ export default ClassesScreen;
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		color: 'red'
-		//backgroundColor: 'blue'
+		color: 'red',
+		backgroundColor: '#F5F6F7'
 	},
 	cover: {
 
