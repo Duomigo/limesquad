@@ -51,15 +51,15 @@ const ProfileStack = createStackNavigator({
 })
 
 const AppStack = createBottomTabNavigator({
-	// Feed: {
-	// 	screen: FeedScreen,
-	// 	navigationOptions: {
-	// 		tabBarLabel: 'Feed',
-	// 		tabBarIcon: ({ tintColor }) => (
-	// 			<Ionicons name="ios-albums" color={tintColor} size={24} />
-	// 		)
-	// 	}
-	// },
+	Feed: {
+		screen: FeedScreen,
+		navigationOptions: {
+			tabBarLabel: 'Feed',
+			tabBarIcon: ({ tintColor }) => (
+				<Ionicons name="ios-albums" color={tintColor} size={24} />
+			)
+		}
+	},
 	Explore: {
 		screen: ExploreStack,
 		navigationOptions: {

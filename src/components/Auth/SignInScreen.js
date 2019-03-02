@@ -49,6 +49,7 @@ class SignInScreen extends Component {
 		} catch (err) {
 			const error = await JSON.stringify(err)
 			console.log(error)
+			this.props.navigation.navigate('App');
 		}
 	};
 
