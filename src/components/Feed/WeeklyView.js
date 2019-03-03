@@ -17,7 +17,7 @@ class WeeklyView extends Component {
 					height: 1,
 					width: "100%",
 					backgroundColor: "#E1E5E9",
-					marginLeft: 25,
+					marginLeft: 20,
 				}}
 			/>
 		);
@@ -58,18 +58,18 @@ const styles = StyleSheet.create({
 		marginRight: 30,
 		marginTop: 10,
 		backgroundColor: '#FFFFFF',
-		borderWidth: 1,
-		borderColor: '#E1E5E9',
+		//borderWidth: 1,
+		//borderColor: '#E1E5E9',
 		borderRadius: 10,
 
-		shadowColor: "#000",
+		shadowColor: "black",
 		shadowOffset: {
 			 width: 0,
-			 height: 0,
+			 height: 6,
 		},
 		shadowOpacity: 0.1,
-		shadowRadius: 3,
+		shadowRadius: 10,
 
-		elevation: 5,
+		elevation: 50,
 	}
 })

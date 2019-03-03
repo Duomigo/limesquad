@@ -12,7 +12,6 @@ import { withNavigation } from 'react-navigation'
 class WeeklyItem extends Component {
 	render() {
 		const { item } = this.props;
-		const baseUrl = 'http://localhost:3000/public/supermarketpic/'
 
 		return (
 			<TouchableOpacity 
@@ -40,34 +39,34 @@ export default withNavigation(WeeklyItem);
 
 const styles = StyleSheet.create({
 	container: {
-		padding: 10
+		padding: 15,
+		paddingBottom: 10
+	},
+	itemTitle: {
+		fontSize: 16,
+		fontFamily: 'Avenir Next',
+		color: '#3c4560',
+		fontWeight: '700'
 	},
 	itemPlace: {
 		fontSize: 14,
 		fontFamily: 'Avenir Next',
 		color: '#b8bece',
 		fontWeight: '500',
-	},
-	itemTitle: {
-		fontSize: 16,
-		fontFamily: 'Avenir Next',
-		color: '#3c4560',
-		fontWeight: '700',
-		marginTop: -3
+		marginTop: -2.5
 	},
 	itemImage: {
-		width: 45,
-		height: 45,
+		width: 40,
+		height: 40,
 		backgroundColor: '#b8bece',
 		borderRadius: 3,
-		marginLeft: 15,
+		marginLeft: 5,
 		position: 'absolute',
-		top: -2.5,
+		top: 0,
 		left: 0
 	},
 	titleBar: {
 		width: '100%',
-		paddingLeft: 75,
-		marginTop: 5
+		paddingLeft: 60
 	},
 })
