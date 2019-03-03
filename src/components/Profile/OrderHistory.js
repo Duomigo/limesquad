@@ -52,12 +52,12 @@ const styles = StyleSheet.create({
 		height: 44,
 		marginLeft: 30,
 		fontSize: 18,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 	},
 	titleHeader: {
 		marginLeft: 20,
 		fontSize: 22,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontWeight: '700',
 		color: '#3c4560'
 	}

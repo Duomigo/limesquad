@@ -3,6 +3,8 @@ import {
 	StyleSheet, 
 	Text, 
 	View, 
+	SafeAreaView,
+	ScrollView,
 	Image,
 	AsyncStorage 
 } from 'react-native';
@@ -41,21 +43,17 @@ class ClassesScreen extends Component {
 
 	render() {
 		return (
-			<View style={styles.container}>
-				<View style={styles.titleHeader}>
-					<View style={styles.titleBar}>
-						<Image style={styles.avatar} source={require('../../../assets/demo.jpg')} />
-						<Text style={styles.title}>Welcome back,</Text>
-						<Text style={styles.name}>{this.state.name}</Text>
+			<SafeAreaView style={styles.container}>
+				<ScrollView>
+					<View style={styles.header}>
+						<Text style={styles.headerText}>
+							Meal Planner
+						</Text>
 					</View>
 
-					<Text style={styles.subTitle}>
-						Your Dining Schedule
-					</Text>
-				</View>
-
-				<SegmentedView />
-			</View>
+					<SegmentedView />	
+				</ScrollView>
+			</SafeAreaView>
 		);
 	}
 }
@@ -65,52 +63,17 @@ export default ClassesScreen;
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		color: 'red',
-		backgroundColor: '#F5F6F7'
+		backgroundColor: '#FFFFFF',
 	},
-	titleHeader: {
-		//backgroundColor: '#20AAEA'
+	header: {
+
 	},
-	avatar: {
-		width: 44,
-		height: 44,
-		backgroundColor: 'black',
-		borderRadius: 22,
-		marginLeft: 30,
-		position: 'absolute',
-		top: 0,
-		left: 0
-	},
-	titleBar: {
-		width: '100%',
-		marginTop: 50,
-		paddingLeft: 90
-	},
-	title: {
-		fontSize: 16,
-		fontFamily: 'Avenir Next',
-		color: '#b8bece',
-		fontWeight: '500',
-	},
-	subTitle: {
-		fontSize: 15,
-		fontFamily: 'Avenir Next',
-		color: '#b8bece',
-		fontWeight: '600',
-		marginLeft: 30,
-		marginTop: 25,
-		textTransform: 'uppercase'
-	},
-	name: {
-		fontSize: 20,
-		fontFamily: 'Avenir Next',
-		color: '#3c4560',
-		fontWeight: '700',
-		marginTop: -3
-	},
-	classes: {
-		flexDirection: 'row',
-		flexWrap: 'wrap',
-		justifyContent: 'space-evenly',
+	headerText: {
+		marginLeft: 25,
+		marginTop: 20,
+		fontFamily: 'System',
+		fontWeight: 'bold',
+		fontSize: 26,
+		color: '#545C76'
 	}
-});
+})

@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
 		flex: 1
 	},
 	text: {
-		fontFamily: "Avenir Next",
+		fontFamily: "System",
 		fontSize: 20
 	},
 	item: {
@@ -73,13 +73,13 @@ const styles = StyleSheet.create({
 		height: 44,
 		marginLeft: 30,
 		fontSize: 18,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 	},
 	titleHeader: {
 		marginLeft: 25,
 		fontSize: 22,
 		marginBottom: 5,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontWeight: '700',
 		color: '#3c4560'
 	}

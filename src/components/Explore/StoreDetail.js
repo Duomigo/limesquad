@@ -45,13 +45,13 @@ const styles = StyleSheet.create({
 	},
 	itemPlace: {
 		fontSize: 14,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		color: '#b8bece',
 		fontWeight: '500',
 	},
 	itemTitle: {
 		fontSize: 16,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		color: '#3c4560',
 		fontWeight: '700',
 		marginTop: -3

@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	text: {
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontSize: 20,
 	}
 })

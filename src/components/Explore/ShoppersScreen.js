@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
 		marginTop: 10,
 		marginLeft: 25,
 		fontSize: 22,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontWeight: '700',
 		color: '#3c4560'
 	},

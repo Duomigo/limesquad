@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
 	//// sdjljsd
 	container: {
 		flex: 1,
-		backgroundColor: '#F5F6F7'
+		backgroundColor: '#F1F3FA'
 	},
 	avatar: {
 		width: 80,
@@ -218,13 +218,13 @@ const styles = StyleSheet.create({
 	},
 	title: {
 		fontSize: 16,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		color: '#b8bece',
 		fontWeight: '500',
 	},
 	subTitle: {
 		fontSize: 15,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		color: '#b8bece',
 		fontWeight: '600',
 		marginLeft: 30,
@@ -233,7 +233,7 @@ const styles = StyleSheet.create({
 	},
 	name: {
 		fontSize: 20,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		color: '#3c4560',
 		fontWeight: '700',
 		paddingTop: 5
@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'space-evenly',
 	},
 	text: {
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontSize: 20,
 	},
 	signInButton: {
@@ -258,7 +258,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	signInButtonText: {
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontWeight: '500',
 		fontSize: 18,
 		fontWeight: '600',
@@ -267,9 +267,9 @@ const styles = StyleSheet.create({
 	item: {
 		padding: 10,
 		paddingLeft: 60,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontWeight: '500',
-		color: '#3c4560',
+		color: '#545C76',
 		fontSize: 18,
 		height: 44,
 	},

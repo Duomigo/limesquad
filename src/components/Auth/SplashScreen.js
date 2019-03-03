@@ -68,13 +68,13 @@ const styles = StyleSheet.create({
 	},
 	welcomeText: {
 		fontSize: 22,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontWeight: '700',
 		color: "#3c4560"
 	},
 	headerText: {
 		fontSize: 22,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontWeight: '600',
 		color: "#3c4560"
 	},
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
 	buttonText: {
 		color: 'white',
 		fontSize: 18,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontWeight: '600'
 	},
 	signIn: {
@@ -99,14 +99,14 @@ const styles = StyleSheet.create({
 		bottom: 0,
 	},
 	signInText: {
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontSize: 16,
 		fontWeight: '600',
 		color: "#3c4560"
 	},
 	signInButtonText: {
 		color: 'rgb(255,45,85)',
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontSize: 16,
 		fontWeight: '600'
 	},

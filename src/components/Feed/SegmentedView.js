@@ -51,17 +51,17 @@ export default SegmentedView;
 
 const styles = StyleSheet.create({
 	tabsContainerStyle: {
-		marginLeft: 30,
-		marginRight: 30,
+		marginLeft: 25,
+		marginRight: 25,
 		marginTop: 10,
 		marginBottom: 10,
 		backgroundColor: 'transparent',
 	},
 	tabStyle: {
-		borderWidth: 0
+		borderWidth: 1
 	},
 	tabTextStyle: {
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontWeight: '600'
 
 	}

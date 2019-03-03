@@ -27,11 +27,11 @@ const styles = StyleSheet.create({
 		marginLeft: 10,
 		fontSize: 18,
 		fontWeight: '500',
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 	},
 	itemPlace: {
 		marginLeft: 10,
 		fontSize: 14,
-		fontFamily: 'Avenir Next'
+		fontFamily: 'System'
 	}
 })

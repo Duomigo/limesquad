@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
 	headerText: {
 		marginTop: 20,
 		marginLeft: 30,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontWeight: 'bold',
 		fontSize: 26,
 		color: '#3c4560'
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
 		borderColor: '#b8bece',
 		borderWidth: 2,
 		borderRadius: 5,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontWeight: '500',
 		fontSize: 18,
 		paddingLeft: 10
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
 		marginLeft: 30,
 		marginRight: 30,
 		marginBottom: 2,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontSize: 18,
 		fontWeight: '600',
 		color: "#3c4560"
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	signInButtonText: {
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontWeight: '500',
 		fontSize: 18,
 		fontWeight: '600',
@@ -191,14 +191,14 @@ const styles = StyleSheet.create({
 		justifyContent: 'center'
 	},
 	signUpText: {
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontSize: 16,
 		fontWeight: '600',
 		color: '#3c4560'
 	},
 	signUpButtonText: {
 		color: 'rgb(255,45,85)',
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontSize: 16,
 		fontWeight: '600'
 	}

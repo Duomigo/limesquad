@@ -137,14 +137,14 @@ const styles = StyleSheet.create({
 		paddingTop: 2,
 		fontSize: 18,
 		fontWeight: '600',
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		color: '#3c4560',
 	},
 	shopperDesc: {
 		marginTop: -3,
 		marginLeft: 15,
 		fontSize: 14,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontWeight: '500',
 		color: '#b8bece',
 	},
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
 		padding: 20,
 		fontSize: 18,
 		fontWeight: '600',
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		color: '#3c4560',
 	},
 	requestButton: {
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
 	},
 	requestHeader: {
 		fontSize: 20,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		color: '#3c4560',
 		fontWeight: '700',
 		marginTop: 10,
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
 		borderColor: '#b8bece',
 		borderWidth: 2,
 		borderRadius: 5,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontWeight: '500',
 		fontSize: 18,
 		paddingLeft: 10
@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
 		marginLeft: 20,
 		marginRight: 20,
 		marginBottom: 2,
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontSize: 18,
 		fontWeight: '600',
 		color: "#3c4560"
@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	signInButtonText: {
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontWeight: '500',
 		fontSize: 18,
 		fontWeight: '600',
@@ -233,7 +233,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	cancelButtonText: {
-		fontFamily: 'Avenir Next',
+		fontFamily: 'System',
 		fontWeight: '500',
 		fontSize: 18,
 		fontWeight: '600',
